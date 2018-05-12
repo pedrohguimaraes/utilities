@@ -127,8 +127,8 @@ class Functions {
 
 
     public static function notify($content, $player_ids = array(), $param = array(), $categories = array()) {
-        $app_id = '5931c24f-eb21-4334-9f1f-9c741365f438';
-        $rest_api_key = 'YWYwM2Q5YmItZDg3YS00Mjk4LThlYjQtYTQ2ZTY4MjhmMTMy';
+        $app_id = '';
+        $rest_api_key = '';
         $color = 'FF0E76BC'; //ARGB
 
         $fields = [
@@ -147,7 +147,7 @@ class Functions {
 
         $curl = curl_init();
 
-        curl_setopt($curl, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");        
+        curl_setopt($curl, CURLOPT_URL, "https://onesignal.com/api/v1/notifications"); // example  
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Authorization: Basic '.$rest_api_key));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HEADER, 0);
