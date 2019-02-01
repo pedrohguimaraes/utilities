@@ -29,7 +29,7 @@ class Functions {
         }
     }
 
-    public static function random($size=6) {
+    public static function random($size = 6) {
         return substr(str_shuffle(str_repeat(
                     $x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 
                     ceil($size/strlen($x)) 
@@ -82,6 +82,20 @@ class Functions {
         return $urls;
     }
 
+    public static function retirarAcentuacao($string){
+        return preg_replace( '/[`^~\'"]/', null, iconv( 'UTF-8', 'ASCII//TRANSLIT', $string ));
+     }
+
+    public function percorrerDir($dir, $formatos){
+
+        if ( $handle = opendir('//190.1.1.2/winthor/fotos/vonder/') ) {
+            while ( $entry = readdir( $handle ) ) {
+                $ext = strtolower( pathinfo( $entry, PATHINFO_EXTENSION) );
+                if( in_array( $ext, $formatos )) echo $entry;
+            }
+            closedir($handle);
+        }
+    }
 
     public static function delete_from_folder($dirPath){
        
