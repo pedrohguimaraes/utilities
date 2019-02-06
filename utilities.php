@@ -88,7 +88,7 @@ class Functions {
 
     public function percorrerDir($dir, $formatos){
 
-        if ( $handle = opendir('//190.1.1.2/winthor/fotos/vonder/') ) {
+        if ( $handle = opendir('') ) {
             while ( $entry = readdir( $handle ) ) {
                 $ext = strtolower( pathinfo( $entry, PATHINFO_EXTENSION) );
                 if( in_array( $ext, $formatos )) echo $entry;
